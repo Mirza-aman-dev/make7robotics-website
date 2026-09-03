@@ -1,13 +1,89 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F0FDFA; /* background */
+  color: #134E4A; /* foreground */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@theme {
+  --color-primary: #8B0000;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #2DD4BF;
+  --color-on-secondary: #0F172A;
+  --color-accent: #D97706;
+  --color-on-accent: #000000;
+  --color-background: #F0FDFA;
+  --color-foreground: #134E4A;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #134E4A;
+  --color-muted: #E8F1F4;
+  --color-muted-foreground: #475569;
+  --color-border: #5EEAD4;
+  --color-destructive: #DC2626;
+  --color-on-destructive: #FFFFFF;
+  --color-ring: #8B0000;
+  
+  --font-sans: 'Work Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+:root {
+  --start: 0;
+  --end: 360;
+  --lightness: 65%;
+  --base-chroma: 0.3;
+  --font-size-min: 14;
+  --font-size-max: 20;
+  --font-ratio-min: 1.1;
+  --font-ratio-max: 1.33;
+  --font-width-min: 375;
+  --font-width-max: 1500;
+}
+
+@keyframes change {
+  to {
+    --hue: var(--end);
+  }
+}
+
+@keyframes chroma-on {
+  to {
+    --chroma: 0.3;
+  }
+}
+
+@keyframes chroma-off {
+  to {
+    --chroma: 0;
+  }
+}
+
+@keyframes brighten {
+  0% {
+    opacity: var(--start-opacity, 0.2);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(var(--brightness, 1.2));
+  }
+  100% {
+    opacity: var(--end-opacity, 0.2);
+  }
 }
